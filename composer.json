@@ -1,5 +1,5 @@
 {
-    "name": "omnipay/tests",
+    "name": "richtor/omnipay-tests",
     "type": "library",
     "description": "Testing components for Omnipay payment processing library",
     "keywords": [
