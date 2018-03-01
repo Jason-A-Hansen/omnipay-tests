@@ -201,6 +201,7 @@ abstract class GatewayTestCase extends TestCase
 
     public function testCompleteAuthorizeParameters()
     {
+        $this->assertNotNull($this->gateway->supportsCompleteAuthorize());
         if ($this->gateway->supportsCompleteAuthorize()) {
             foreach ($this->gateway->getDefaultParameters() as $key => $default) {
                 // set property on gateway
@@ -252,6 +253,7 @@ abstract class GatewayTestCase extends TestCase
 
     public function testCompletePurchaseParameters()
     {
+        $this->assertNotNull($this->gateway->supportsCompletePurchase());
         if ($this->gateway->supportsCompletePurchase()) {
             foreach ($this->gateway->getDefaultParameters() as $key => $default) {
                 // set property on gateway
@@ -303,6 +305,7 @@ abstract class GatewayTestCase extends TestCase
 
     public function testCreateCardParameters()
     {
+        $this->assertNotNull($this->gateway->supportsCreateCard());
         if ($this->gateway->supportsCreateCard()) {
             foreach ($this->gateway->getDefaultParameters() as $key => $default) {
                 // set property on gateway
@@ -320,6 +323,7 @@ abstract class GatewayTestCase extends TestCase
 
     public function testDeleteCardParameters()
     {
+        $this->assertNotNull($this->gateway->supportsDeleteCard());
         if ($this->gateway->supportsDeleteCard()) {
             foreach ($this->gateway->getDefaultParameters() as $key => $default) {
                 // set property on gateway
@@ -337,6 +341,7 @@ abstract class GatewayTestCase extends TestCase
 
     public function testUpdateCardParameters()
     {
+        $this->assertNotNull($this->gateway->supportsUpdateCard());
         if ($this->gateway->supportsUpdateCard()) {
             foreach ($this->gateway->getDefaultParameters() as $key => $default) {
                 // set property on gateway
