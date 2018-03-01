@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Request as HttpRequest;
  *
  * Guzzle mock methods area based on those in GuzzleTestCase
  */
-abstract class TestCase extends PHPUnit_Framework_TestCase
+abstract class TestCase extends \PHPUnit\Framework\TestCase
 {
     private $mockHttpRequests = array();
     private $mockRequest;
