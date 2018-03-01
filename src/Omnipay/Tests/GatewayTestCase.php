@@ -25,12 +25,14 @@ abstract class GatewayTestCase extends TestCase
 
     public function testGetDefaultParametersReturnsArray()
     {
+        $this->assertNotNull($this->gateway->getDefaultParameters());
         $settings = $this->gateway->getDefaultParameters();
         $this->assertInternalType('array', $settings);
     }
 
     public function testDefaultParametersHaveMatchingMethods()
     {
+        $this->assertNotNull($this->gateway->getDefaultParameters());
         $settings = $this->gateway->getDefaultParameters();
         foreach ($settings as $key => $default) {
             $getter = 'get'.ucfirst($this->camelCase($key));
@@ -76,6 +78,7 @@ abstract class GatewayTestCase extends TestCase
 
     public function testSupportsCompleteAuthorize()
     {
+        $this->assertNotNull($this->gateway->supportsCompleteAuthorize());
         $supportsCompleteAuthorize = $this->gateway->supportsCompleteAuthorize();
         $this->assertInternalType('boolean', $supportsCompleteAuthorize);
 
@@ -172,6 +175,7 @@ abstract class GatewayTestCase extends TestCase
 
     public function testSupportsUpdateCard()
     {
+        $this->assertNotNull($this->gateway->supportsUpdateCard());
         $supportsUpdate = $this->gateway->supportsUpdateCard();
         $this->assertInternalType('boolean', $supportsUpdate);
 
@@ -184,6 +188,7 @@ abstract class GatewayTestCase extends TestCase
 
     public function testAuthorizeParameters()
     {
+        $this->assertNotNull($this->gateway->supportsAuthorize());
         if ($this->gateway->supportsAuthorize()) {
             foreach ($this->gateway->getDefaultParameters() as $key => $default) {
                 // set property on gateway
@@ -219,6 +224,7 @@ abstract class GatewayTestCase extends TestCase
 
     public function testCaptureParameters()
     {
+        $this->assertNotNull($this->gateway->supportsCapture());
         if ($this->gateway->supportsCapture()) {
             foreach ($this->gateway->getDefaultParameters() as $key => $default) {
                 // set property on gateway
@@ -236,6 +242,7 @@ abstract class GatewayTestCase extends TestCase
 
     public function testPurchaseParameters()
     {
+        $this->assertNotNull($this->gateway->supportsPurchase());
         if ($this->gateway->supportsPurchase()) {
             foreach ($this->gateway->getDefaultParameters() as $key => $default) {
                 // set property on gateway
